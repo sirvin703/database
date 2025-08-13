@@ -19,6 +19,12 @@ pipeline {
     }
     stage('Build') { steps { sh 'docker build -t $IMAGE:$VERSION -t $IMAGE:latest .' } }
     stage('Push')  { steps { sh 'docker push $IMAGE:$VERSION && docker push $IMAGE:latest' } }
+
+    // Placeholder environment stages for the screenshot deliverable
+    stage('Build (env)') { steps { sh 'echo "Build env stage (placeholder)"' } }
+    stage('Dev')         { steps { sh 'echo "Deploy to Dev (placeholder)"' } }
+    stage('Staging')     { steps { sh 'echo "Deploy to Staging (placeholder)"' } }
+    stage('Prod')        { steps { sh 'echo "Deploy to Prod (placeholder)"' } }
   }
   post { always { sh 'docker logout || true' } }
 }
