@@ -1,5 +1,5 @@
 # Postgres base image (Alpine variant for smaller size)
-FROM postgres:16-alpine
+FROM postgres:16-bookworm
 
 # Copy any initialization scripts. These run automatically on first start
 # when the data directory is empty.
